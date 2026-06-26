@@ -1,0 +1,19 @@
+{
+  "name": "ai-resume-jd-matcher",
+  "version": "1.0.0",
+  "description": "AI resume and job description matcher for AI/Web3 internship applications.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "ai",
+    "resume",
+    "job-matching",
+    "deepseek",
+    "internship"
+  ],
+  "author": "",
+  "license": "MIT"
+}
