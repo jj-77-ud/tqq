@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Resume Match</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Shanghai AI / Web3 Internship Tool</p>
+          <h1>AI Resume Match</h1>
+        </div>
+        <div class="status-pill" id="sourceStatus">Ready</div>
+      </header>
+
+      <section class="workspace" aria-label="简历岗位匹配工作台">
+        <form class="input-panel" id="matchForm">
+          <div class="field-row">
+            <label for="targetRole">目标方向</label>
+            <select id="targetRole" name="targetRole">
+              <option value="AI+Web3">AI+Web3</option>
+              <option value="AI应用开发">AI应用开发</option>
+              <option value="大模型/RAG/Agent">大模型/RAG/Agent</option>
+              <option value="Web3/区块链开发">Web3/区块链开发</option>
+            </select>
+          </div>
+
+          <div class="textarea-group">
+            <label for="resumeText">简历内容</label>
+            <textarea id="resumeText" name="resumeText" spellcheck="false"></textarea>
+          </div>
+
+          <div class="textarea-group">
+            <label for="jdText">岗位 JD</label>
+            <textarea id="jdText" name="jdText" spellcheck="false"></textarea>
+          </div>
+
+          <div class="action-row">
+            <button class="primary-button" type="submit" id="analyzeButton">开始分析</button>
+            <button class="ghost-button" type="button" id="sampleButton">载入示例</button>
+          </div>
+        </form>
+
+        <section class="result-panel" aria-live="polite">
+          <div class="score-band">
+            <div class="score-ring" id="scoreRing">
+              <span id="scoreValue">--</span>
+              <small>Match</small>
+            </div>
+            <div>
+              <p class="eyebrow">分析摘要</p>
+              <h2 id="summaryTitle">等待分析</h2>
+              <p id="summaryText">填入简历和岗位 JD 后生成匹配建议。</p>
+            </div>
+          </div>
+
+          <div class="warning" id="warningBox" hidden></div>
+
+          <div class="result-grid">
+            <article class="result-block">
+              <h3>命中技能</h3>
+              <div class="chip-list" id="matchedSkills"></div>
+            </article>
+            <article class="result-block">
+              <h3>缺失能力</h3>
+              <div class="chip-list warning-chips" id="missingSkills"></div>
+            </article>
+          </div>
+
+          <article class="result-block">
+            <h3>简历修改建议</h3>
+            <ol id="resumeSuggestions"></ol>
+          </article>
+
+          <article class="result-block">
+            <h3>项目补强建议</h3>
+            <ol id="projectSuggestions"></ol>
+          </article>
+
+          <article class="result-block">
+            <h3>投递话术</h3>
+            <p class="outreach" id="outreachMessage"></p>
+          </article>
+
+          <article class="result-block">
+            <h3>风险提醒</h3>
+            <ol id="riskNotes"></ol>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
