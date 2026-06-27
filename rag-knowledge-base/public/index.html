@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RAG Knowledge Base</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Portfolio Project</p>
+          <h1>RAG Knowledge Base</h1>
+        </div>
+        <div class="status-pill">
+          <span id="chunkCount">0</span>
+          <span>chunks indexed</span>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <aside class="panel docs-panel">
+          <div class="panel-heading">
+            <h2>知识库文档</h2>
+          </div>
+          <div id="documentList" class="document-list"></div>
+        </aside>
+
+        <section class="panel ask-panel">
+          <div class="panel-heading">
+            <h2>问答工作台</h2>
+            <button id="sampleButton" class="ghost-button" type="button">示例问题</button>
+          </div>
+
+          <form id="askForm" class="ask-form">
+            <textarea id="questionInput" rows="4">数据标注兼职需要准备什么能力？</textarea>
+            <div class="form-actions">
+              <button class="primary-button" type="submit">生成回答</button>
+              <button id="exportButton" class="secondary-button" type="button">导出 JSON</button>
+            </div>
+          </form>
+
+          <article class="answer-surface">
+            <div class="answer-header">
+              <h2>回答</h2>
+              <span id="answerState">ready</span>
+            </div>
+            <pre id="answerText">等待问题...</pre>
+          </article>
+        </section>
+
+        <aside class="panel evidence-panel">
+          <div class="panel-heading">
+            <h2>检索证据</h2>
+          </div>
+          <div id="evidenceList" class="evidence-list"></div>
+        </aside>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
