@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LLM Eval Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">AI Training Portfolio</p>
+          <h1>LLM Eval Dashboard</h1>
+        </div>
+        <button id="exportButton" class="export-button" type="button">导出评测 JSON</button>
+      </header>
+
+      <section id="kpiGrid" class="kpi-grid"></section>
+
+      <section class="main-grid">
+        <section class="panel leaderboard-panel">
+          <div class="panel-title">
+            <h2>模型榜单</h2>
+            <span>score / pass / risk</span>
+          </div>
+          <div id="leaderboard" class="leaderboard"></div>
+        </section>
+
+        <section class="panel chart-panel">
+          <div class="panel-title">
+            <h2>错误类型</h2>
+            <span>taxonomy</span>
+          </div>
+          <div id="errorBars" class="error-bars"></div>
+        </section>
+
+        <section class="panel pair-panel">
+          <div class="panel-title">
+            <h2>A/B 对比</h2>
+            <span>prompt winners</span>
+          </div>
+          <div id="pairList" class="pair-list"></div>
+        </section>
+
+        <section class="panel review-panel">
+          <div class="panel-title">
+            <h2>评测样本</h2>
+            <span id="recordCount">0 records</span>
+          </div>
+          <div id="recordList" class="record-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
