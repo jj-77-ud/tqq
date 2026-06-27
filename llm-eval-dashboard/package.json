@@ -1,0 +1,18 @@
+{
+  "name": "llm-eval-dashboard",
+  "version": "1.0.0",
+  "description": "A local LLM response evaluation dashboard for AI training and data annotation portfolios.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "llm-evaluation",
+    "model-eval",
+    "ai-training",
+    "data-annotation",
+    "dashboard"
+  ],
+  "license": "MIT"
+}
