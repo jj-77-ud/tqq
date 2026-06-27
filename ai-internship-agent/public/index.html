@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Internship Agent</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">AI Agent Portfolio</p>
+          <h1>AI Internship Agent</h1>
+        </div>
+        <button id="exportButton" class="export-button" type="button">导出投递 JSON</button>
+      </header>
+
+      <section id="kpiGrid" class="kpi-grid"></section>
+
+      <section class="workspace">
+        <section class="panel pipeline-panel">
+          <div class="panel-title">
+            <h2>投递管道</h2>
+            <span>status overview</span>
+          </div>
+          <div id="pipelineGrid" class="pipeline-grid"></div>
+        </section>
+
+        <section class="panel action-panel">
+          <div class="panel-title">
+            <h2>下一步动作</h2>
+            <span>agent plan</span>
+          </div>
+          <div id="actionList" class="action-list"></div>
+        </section>
+
+        <section class="panel jobs-panel">
+          <div class="panel-title">
+            <h2>岗位匹配</h2>
+            <span id="jobCount">0 jobs</span>
+          </div>
+          <div id="jobList" class="job-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
