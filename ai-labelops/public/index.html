@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI LabelOps</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">AI Training Data Workbench</p>
+          <h1>AI LabelOps</h1>
+        </div>
+        <div class="top-actions">
+          <button class="ghost-button" id="resetButton" type="button">重置样本</button>
+          <button class="primary-button" id="exportButton" type="button">导出 JSON</button>
+        </div>
+      </header>
+
+      <section class="layout">
+        <aside class="side-panel">
+          <div class="segment" id="typeTabs"></div>
+          <div class="task-list" id="taskList"></div>
+        </aside>
+
+        <section class="workspace">
+          <article class="task-editor" id="taskEditor"></article>
+          <article class="guideline-panel">
+            <h2>标注规范</h2>
+            <div id="guidelineList"></div>
+          </article>
+        </section>
+
+        <aside class="metrics-panel">
+          <h2>质检看板</h2>
+          <div class="metric-grid" id="metricGrid"></div>
+          <h3>质检问题</h3>
+          <div class="issue-list" id="issueList"></div>
+          <h3>导出预览</h3>
+          <pre id="exportPreview"></pre>
+        </aside>
+      </section>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
