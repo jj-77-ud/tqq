@@ -1,0 +1,18 @@
+{
+  "name": "ai-internship-agent",
+  "version": "1.0.0",
+  "description": "An AI internship application agent for job tracking, JD analysis, outreach copy, and follow-up planning.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "ai-agent",
+    "internship",
+    "job-tracker",
+    "career-tool",
+    "portfolio"
+  ],
+  "license": "MIT"
+}
