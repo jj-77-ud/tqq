@@ -1,0 +1,20 @@
+{
+  "name": "onchain-address-dashboard",
+  "version": "1.0.0",
+  "description": "A zero-dependency on-chain address intelligence dashboard with sample wallet data, risk rules, and report export.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "web3",
+    "onchain",
+    "wallet",
+    "dashboard",
+    "risk",
+    "portfolio"
+  ],
+  "author": "",
+  "license": "MIT"
+}
