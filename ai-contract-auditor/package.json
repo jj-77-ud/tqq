@@ -1,0 +1,20 @@
+{
+  "name": "ai-contract-auditor",
+  "version": "1.0.0",
+  "description": "A zero-dependency AI-style Solidity contract auditor with risk scoring, findings, fixes, and report export.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "ai",
+    "solidity",
+    "audit",
+    "web3",
+    "security",
+    "portfolio"
+  ],
+  "author": "",
+  "license": "MIT"
+}
