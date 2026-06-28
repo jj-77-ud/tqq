@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Contract Auditor</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">AI + Web3 Security</p>
+        <h1>AI 智能合约审计助手</h1>
+      </div>
+      <div class="status">
+        <span></span>
+        <strong>Offline Rule Engine</strong>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="control-bar">
+        <label>
+          <span>示例合约</span>
+          <select id="sampleSelect"></select>
+        </label>
+        <label>
+          <span>合约名称</span>
+          <input id="titleInput" value="VulnerableVault" />
+        </label>
+        <button id="analyzeButton" type="button">开始审计</button>
+        <button id="copyPromptButton" class="ghost" type="button">复制 Prompt</button>
+      </section>
+
+      <section class="metrics">
+        <article class="metric score">
+          <span>风险分</span>
+          <strong id="riskScore">-</strong>
+          <small>/100</small>
+        </article>
+        <article class="metric severity">
+          <span>总体等级</span>
+          <strong id="severity">-</strong>
+          <small>Severity</small>
+        </article>
+        <article class="metric">
+          <span>发现数量</span>
+          <strong id="findingCount">-</strong>
+          <small>Findings</small>
+        </article>
+        <article class="metric">
+          <span>合约函数</span>
+          <strong id="functionCount">-</strong>
+          <small>Functions</small>
+        </article>
+      </section>
+
+      <section class="main-grid">
+        <article class="panel editor-panel">
+          <div class="panel-head">
+            <h2>Solidity Source</h2>
+            <span id="lineCount">0 lines</span>
+          </div>
+          <textarea id="sourceInput" spellcheck="false"></textarea>
+        </article>
+
+        <article class="panel findings-panel">
+          <div class="panel-head">
+            <h2>审计发现</h2>
+            <button id="copyReportButton" class="ghost small" type="button">复制 JSON</button>
+          </div>
+          <div id="findingsList" class="findings-list"></div>
+        </article>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="panel">
+          <div class="panel-head">
+            <h2>修复计划</h2>
+          </div>
+          <ol id="reviewPlan" class="review-plan"></ol>
+        </article>
+
+        <article class="panel report-panel">
+          <div class="panel-head">
+            <h2>报告预览</h2>
+          </div>
+          <pre><code id="reportPreview"></code></pre>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
