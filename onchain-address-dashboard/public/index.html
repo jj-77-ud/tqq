@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onchain Address Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Web3 Address Intelligence</p>
+        <h1>链上地址分析看板</h1>
+      </div>
+      <div class="status">
+        <span></span>
+        <strong>Offline Samples</strong>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="control-bar">
+        <label>
+          <span>样例地址</span>
+          <select id="walletSelect"></select>
+        </label>
+        <label>
+          <span>钱包地址</span>
+          <input id="addressInput" />
+        </label>
+        <button id="loadButton" type="button">分析地址</button>
+        <button id="copyReportButton" class="ghost" type="button">复制报告</button>
+      </section>
+
+      <section class="profile-strip">
+        <article>
+          <span>地址画像</span>
+          <strong id="persona">-</strong>
+        </article>
+        <article>
+          <span>风险等级</span>
+          <strong id="severity">-</strong>
+        </article>
+        <article>
+          <span>风险分</span>
+          <strong id="riskScore">-</strong>
+        </article>
+        <article>
+          <span>交易数</span>
+          <strong id="txCount">-</strong>
+        </article>
+      </section>
+
+      <section class="metrics">
+        <article class="metric">
+          <span>总交易量</span>
+          <strong id="totalVolume">-</strong>
+          <small>USD</small>
+        </article>
+        <article class="metric">
+          <span>净流入</span>
+          <strong id="netFlow">-</strong>
+          <small>USD</small>
+        </article>
+        <article class="metric">
+          <span>合约交互</span>
+          <strong id="contractInteractions">-</strong>
+          <small>Interactions</small>
+        </article>
+        <article class="metric">
+          <span>活跃天数</span>
+          <strong id="activeDays">-</strong>
+          <small>Days</small>
+        </article>
+      </section>
+
+      <section class="main-grid">
+        <article class="panel">
+          <div class="panel-head">
+            <h2>风险标签</h2>
+          </div>
+          <div id="riskList" class="risk-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h2>资产流向</h2>
+          </div>
+          <div id="assetFlows" class="asset-flows"></div>
+        </article>
+      </section>
+
+      <section class="data-grid">
+        <article class="panel">
+          <div class="panel-head">
+            <h2>Top Counterparties</h2>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Counterparty</th>
+                  <th>Type</th>
+                  <th>Tx</th>
+                  <th>Volume</th>
+                </tr>
+              </thead>
+              <tbody id="counterpartyRows"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h2>Activity Timeline</h2>
+          </div>
+          <div id="timeline" class="timeline"></div>
+        </article>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="panel">
+          <div class="panel-head">
+            <h2>建议动作</h2>
+          </div>
+          <ol id="recommendations" class="recommendations"></ol>
+        </article>
+        <article class="panel report-panel">
+          <div class="panel-head">
+            <h2>报告预览</h2>
+          </div>
+          <pre><code id="reportPreview"></code></pre>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
